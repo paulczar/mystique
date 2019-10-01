@@ -1,0 +1,18 @@
+# Default values for mystique.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# manifests should be a list of kube manifests that you want to be deployed
+# supports some basic templating as shown in below example.
+manifests:
+  - name: mystique
+    apiVersion: v1
+    kind: Service
+    annotations:
+      marvel.mutant.name: mystique
+    labels:
+      xwoman: mystique
+    spec:
+      externalName: "{{ .Values.demoUrl }}"
+
+demoUrl: www.marvel.com
