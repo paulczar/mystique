@@ -14,5 +14,9 @@ manifests:
       xwoman: mystique
     spec:
       externalName: "{{ .Values.demoUrl }}"
+      ports:
+        - name: http
+          port: 80
+    body: {}
 
 demoUrl: www.marvel.com
